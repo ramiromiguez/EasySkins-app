@@ -1,0 +1,27 @@
+$FontOdibeSans: 'Odibee Sans', cursive;
+$FontYanone: 'Yanone Kaffeesatz', sans-serif;
+$ColorVioleta: rgb(58, 3, 75);
+
+.navbar{
+    background-color: $ColorVioleta;
+}
+
+.navbar .navbar-brand{
+    font-family: $FontOdibeSans;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 3rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+
+.navbar .nav-item{
+    font-family: $FontYanone;
+    font-size: 110%;
+}
+
+.navbar .btn{
+    font-family: $FontYanone;
+    font-size: 110%;
+}
