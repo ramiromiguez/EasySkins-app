@@ -1,13 +1,17 @@
 import React from 'react';
+import CartWidget from './CartWidget';
 import { LiComponents } from './LiComponents'
 import './Navbar.scss'
 
 
 export const Navbar = () => {
   return (
-    <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark border-bottom border-top border-white">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">EasySkins</a>
+        <div className="brandCartDiv">
+          <a className="navbar-brand" href="#">EasySkins</a>
+          <CartWidget/>
+        </div>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

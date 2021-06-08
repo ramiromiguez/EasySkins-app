@@ -1,0 +1,18 @@
+$FontYanone: 'Yanone Kaffeesatz', sans-serif;
+$ColorVioleta: rgb(58, 3, 75);
+
+.itemListContainer{
+    padding-top: 2rem;
+    background-color: $ColorVioleta;
+    color: white;
+}
+
+.greeting{
+    text-align: center;
+    font-family: $FontYanone;
+}
+
+.subtitle{
+    text-align: center;
+    font-family: $FontYanone;
+}
