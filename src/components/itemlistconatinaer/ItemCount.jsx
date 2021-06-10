@@ -3,46 +3,44 @@ import './ItemListContainer.scss'
 
 
 export const LiComponents = props => {
-    
     const { stock, initial} = props;
+    const [ currStock, setCurrStock] = useState(stock)
     const [count, setCount] = useState(initial)
-    const [buttonOnOff, setButtonOnOff] = useState(false)
-    const cantidad = "undifined" 
 
     const addItem = () => {
-        if (count < stock)
             setCount(count + 1)
     }
     
     const removeItem = () => {
-        if (count > initial && stock > 0)
             setCount (count - 1)
     }
 
     const onAdd = () => {
-        if (stock > 0)
-            stock = stock - count;
-        if (stock < 1)
-            alert("no hay mas stock!");
+        if (currStock > 0)
+            setCurrStock( currStock - count )
+            setCount(0)
     }
 
     return (
         <div className="container">
             <div className="row">
-                <div className="itemCountContainer col-6 col-md-4 mx-auto mt-4 border border-white">
-                    <h6 id="itemName">Karambit Fade</h6>
-                    <div className="mt-3">
-                        <div className="row">
-                            <div className="col-3">
-                                <button onClick={addItem} type="button" class="btn btn-outline-light">+1</button>
+                <div className="itemCountContainer col-6 col-md-4 mx-auto my-4 border border-white">
+                    <div className="py-4 px-2">
+                        <h6 className="text-center">Karambit Fade</h6>
+                        <h6 className="text-center"> Stock disponible: {currStock}</h6>
+                        <div className="mt-3">
+                            <div className="row">
+                                <div className="col-3 text-start">
+                                    <button onClick={addItem} type="button" class="btn btn-outline-light" disabled={count>=currStock?true:false}>+1</button>
+                                </div>
+                                <div className="col-6 text-center">
+                                    <button onClick={onAdd} type="button" class="btn btn-outline-light" id="agregarCarrito">agregar al carrito: {count}</button>
+                                </div>
+                                <div className="col-3 text-end">
+                                    <button onClick={removeItem} type="button" class="btn btn-outline-light" disabled={count<=1?true:false}>-1</button>
+                                </div>
                             </div>
-                            <div className="col-6">
-                                <button onClick={onAdd} type="button" class="btn btn-outline-light" id="agregarCarrito">agregar al carrito: {count}</button>
-                            </div>
-                            <div className="col-3">
-                                <button onClick={removeItem} type="button" class="btn btn-outline-light">-1</button>
-                            </div>
-                        </div>
+                        </div>     
                     </div>
                 </div>
             </div>

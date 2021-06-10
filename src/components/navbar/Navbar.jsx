@@ -6,7 +6,7 @@ import './Navbar.scss'
 
 export const Navbar = () => {
   return (
-    <nav className="navbar sticky-top navbar-expand-lg navbar-dark border-bottom border-top border-white">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark border-bottom border-top border-white animate__animated animate__fadeInDown animate__faster">
       <div className="container-fluid">
         <div className="brandCartDiv">
           <a className="navbar-brand" href="#">EasySkins</a>
