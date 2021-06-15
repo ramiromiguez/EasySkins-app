@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/navbar/Navbar.jsx'
-import ItemListCointaner from './components/itemlistconatinaer/ItemListContainer'
+import ItemListCointaner from './components/itemlistcontainer/ItemListContainer'
+
 
 const App = props => {
   return <>

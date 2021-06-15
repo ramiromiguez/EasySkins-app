@@ -31,13 +31,13 @@ export const LiComponents = props => {
                         <div className="mt-3">
                             <div className="row">
                                 <div className="col-3 text-start">
-                                    <button onClick={addItem} type="button" class="btn btn-outline-light" disabled={count>=currStock?true:false}>+1</button>
+                                    <button onClick={addItem} type="button" className="btn btn-outline-light" disabled={count>=currStock?true:false}>+1</button>
                                 </div>
                                 <div className="col-6 text-center">
-                                    <button onClick={onAdd} type="button" class="btn btn-outline-light" id="agregarCarrito">agregar al carrito: {count}</button>
+                                    <button onClick={onAdd} type="button" className="btn btn-outline-light" id="agregarCarrito">agregar al carrito: {count}</button>
                                 </div>
                                 <div className="col-3 text-end">
-                                    <button onClick={removeItem} type="button" class="btn btn-outline-light" disabled={count<=1?true:false}>-1</button>
+                                    <button onClick={removeItem} type="button" className="btn btn-outline-light" disabled={count<=1?true:false}>-1</button>
                                 </div>
                             </div>
                         </div>     
