@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Item } from './Item'
 import './itemList.scss'
-import skinsList from '../../items.json'
+import skinsList from '../../../../items.json'
 
 export const ItemList = () => {
     
@@ -18,18 +18,12 @@ export const ItemList = () => {
     myPromise
         .then(result =>  setSkinsItem(result))
 
-    
+
     return(
         <div className="container">
             <div className="row">
-                {skinsItem.map((element) => 
-                <Item key= {element.id}
-                    id={element.id}
-                    skinName={element.gunName}
-                    state={element.state}
-                    float={element.float}
-                    photo={element.photo}
-                    price={element.price}
+                {skinsItem.map((element, id) => 
+                <Item key= {id} {...element}
                 />)}
             </div>
         </div>

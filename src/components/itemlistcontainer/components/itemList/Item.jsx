@@ -1,5 +1,6 @@
 import React from 'react'
 import './itemList.scss'
+import './ItemList'
 
 export const Item = props => {
     return (

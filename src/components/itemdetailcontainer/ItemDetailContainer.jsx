@@ -35,7 +35,6 @@ function ItemDetailContainer() {
     return (
         <div className="container">
             <div className="row">
-            {console.log(itemSelector[0])}
             <ItemDetail element={itemSelector[0]}/>
             </div>
         </div>

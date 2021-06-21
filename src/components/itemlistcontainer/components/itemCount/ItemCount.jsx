@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './ItemListContainer.scss'
+import '../../ItemListContainer'
 
 
 export const LiComponents = props => {
