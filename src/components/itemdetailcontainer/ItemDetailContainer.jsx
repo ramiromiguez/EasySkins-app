@@ -2,9 +2,11 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import skinsList from '../../items.json'
 import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
     
+    const {itemId} = useParams();
 
     const myPromise = new Promise ((resolve,reject) => {
         setTimeout(() => resolve(
@@ -12,30 +14,22 @@ function ItemDetailContainer() {
         ),2000)
     });
 
-
-    const [itemSelector, setItemSelector] = useState([]);
+    const [itemSelector, setItemSelector] = useState();
     
-    function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-
-   
-    const randomNumber = parseInt(getRandomArbitrary(0,6).toFixed())
-
-    const getItem = () => {
+    const getItem = ()  => {
         myPromise
-            .then(result => setItemSelector(skinsList.filter(element => element.id === randomNumber)))
+        .then(result => setItemSelector(result.find(result => result.id === parseInt(itemId))))
     }
-    
 
     useEffect(() => {
         getItem();
-    },[])
+    },[itemId])
+
 
     return (
         <div className="container">
             <div className="row">
-            <ItemDetail element={itemSelector[0]}/>
+                { <ItemDetail element={itemSelector}/>} 
             </div>
         </div>
     )

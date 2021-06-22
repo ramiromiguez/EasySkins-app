@@ -1,9 +1,11 @@
 import React from 'react'
+import './ItemDetail.scss'
+
 
 export const ItemDetail = props => {
 
-    return props.element?(
-        <div className="col-6 mx-auto my-3 border border-white rounded">
+    return props.element ?  (
+        <div className="cards col-6 mx-auto my-3 border border-white rounded">
             <h2 className="text-center">{props.element.gunName}</h2>
             <img src={props.element.photo} alt="" className="mx-auto"/>
             <h6>State: {props.element.state}</h6>
