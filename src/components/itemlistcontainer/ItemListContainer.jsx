@@ -1,6 +1,5 @@
 import React from 'react'
 import './ItemListContainer.scss'
-import ItemCount from './components/itemCount/ItemCount'
 import ItemList from './components/itemList/ItemList'
 import { useState, useEffect } from 'react'
 import skinsList from './../../items.json'
@@ -43,7 +42,7 @@ const ItemListContainer = props =>  {
     return (
         <div className="itemListContainer">
             <ItemList data={dataReformed}/>
-            <ItemCount stock={25} initial={1}/>
+            
         </div>
 )}
         

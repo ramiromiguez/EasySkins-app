@@ -1,0 +1,30 @@
+.confirmBuy{
+    color: white;
+}
+
+.butonContainer{
+    text-align: center;
+    h4{
+        font-size: 1.5rem;
+    }
+}
+
+.boton{
+    text-decoration: none;
+    font-size: 1rem;
+    background-color:transparent;
+    color: white;
+    border: 1px solid white;
+    transition:.2s ease all;
+    &:disabled{
+        opacity:.2;
+        cursor:not-allowed;
+        &:hover{
+            background-color: transparent;
+        }
+    }
+    &:hover{
+        background-color: white;
+        color: black;
+    }
+}

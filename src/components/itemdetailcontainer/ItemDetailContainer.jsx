@@ -29,7 +29,7 @@ function ItemDetailContainer() {
     return (
         <div className="container">
             <div className="row">
-                { <ItemDetail element={itemSelector}/>} 
+                {<ItemDetail element={itemSelector}/>} 
             </div>
         </div>
     )
