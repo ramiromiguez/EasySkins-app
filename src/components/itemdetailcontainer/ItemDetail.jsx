@@ -1,6 +1,5 @@
 import React from 'react'
-import ButtonComponent from './itemCount/ItemCount'
-import ItemCount from './itemCount/ItemCount'
+import ItemCountContainer from './itemCount/ItemCountContainer'
 import './ItemDetail.scss'
 
 
@@ -14,7 +13,7 @@ export const ItemDetail = props => {
             <h6>Float: {props.element.float}</h6>
             <h6>Price: {props.element.price}</h6>
             <h6>Detail: {props.element.detalle}</h6>
-            <ItemCount/>
+            <ItemCountContainer id={props.element.id}/>
         </div>
     ):''
 }

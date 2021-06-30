@@ -2,7 +2,7 @@ import React from 'react'
 import './ItemListContainer.scss'
 import ItemList from './components/itemList/ItemList'
 import { useState, useEffect } from 'react'
-import skinsList from './../../items.json'
+import skinsList from '../../dataBase/items.json'
 import { useParams } from 'react-router-dom'
 
 

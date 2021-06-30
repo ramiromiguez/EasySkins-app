@@ -4,12 +4,13 @@ import Navbar from './components/navbar/Navbar.jsx'
 import ItemListContainer from './components/itemlistcontainer/ItemListContainer.jsx';      
 import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.jsx';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-
+import { CartContextProvider } from "./context/CartContext"
 
 
 const App = props => {
   return <>
     <div className="App">
+      <CartContextProvider>
         <BrowserRouter>
           <header className="App-header">
               <Navbar/>
@@ -26,6 +27,7 @@ const App = props => {
             </Route>
           </Switch>
         </BrowserRouter>
+      </CartContextProvider>
     </div>
   </>
 }
