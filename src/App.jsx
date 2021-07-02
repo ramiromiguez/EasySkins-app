@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Navbar from './components/navbar/Navbar.jsx'
-import ItemListContainer from './components/itemlistcontainer/ItemListContainer.jsx';      
-import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer.jsx';
+import Navbar from './Components/Navbar/Navbar.jsx'
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer.jsx';      
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer.jsx';
+import Cart from './Components/Navbar/CartContainer'
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import { CartContextProvider } from "./context/CartContext"
+import { CartContextProvider } from "./Context/CartContext"
 
 
 const App = props => {
@@ -24,6 +25,9 @@ const App = props => {
             </Route>
             <Route exact path="/item/:itemId">
               <ItemDetailContainer/>
+            </Route>
+            <Route exact path="/cart">
+              <Cart/>
             </Route>
           </Switch>
         </BrowserRouter>

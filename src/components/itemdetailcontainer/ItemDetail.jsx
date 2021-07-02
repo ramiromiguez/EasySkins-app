@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCountContainer from './itemCount/ItemCountContainer'
+import ItemCountContainer from './ItemCount/ItemCountContainer'
 import './ItemDetail.scss'
 
 

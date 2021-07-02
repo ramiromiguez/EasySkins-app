@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import './ItemCount.scss'
-import { CartContext } from '../../../context/CartContext'
+import { CartContext } from '../../../Context/CartContext'
 
 const ShowMessage = ({stock}) =>{
      return <h4>{`Vas a comprar ${stock}`}</h4>
@@ -17,32 +17,49 @@ const ButtonMinusOne = ({stock, changeStock}) =>{
 }
 
 const ButtonAddCart = ({changePress, id, stock, maxStock, addItem}) =>{
-     return <button className="boton" onClick={() => changePress(true) + addItem(id,stock)} disabled={stock>0?false:true}> Agregar al carrito </button>
+     return <button className="boton" onClick={() => changePress(true) + addItem(id,stock,maxStock)} disabled={stock>0?false:true}> Agregar al carrito </button>
 }
 
 export const ItemCount = props =>{
-    
     const [stock, setStock] = useState(0);
     const [press,setPress] = useState(false)
+    
+
     const handleStock = value => setStock(value);
     const handlePress = value => setPress(value);
     const stockMaxQuantity = props.element.stock
     const stockId = props.element.id
-
     const [addItems, setAddItems] = useContext(CartContext)
-    
-    const addItem = (id,cantidad) =>{
+    const itemsDataArray = props.elementData
+
+    const addItem = (id,cantidad, maxStock) =>{
+        const findId = addItems.find(element => element.itemId === id);
+        const findDataId = itemsDataArray.find(element => element.id === stockId);
+        if(findId && findDataId){
+            if(stock<=maxStock){
+                const new_items = (addItems.filter(element => element.itemId !== id))
+                const object = {
+                    itemId : id,
+                    stock: cantidad + findId.stock,
+                    price: findDataId.price,
+                    name: findDataId.gunName
+                }
+            
+            setAddItems([...new_items, object])
+            }
+            return null
+        }
         const object = {
             itemId : id,
-            stock: cantidad
+            stock: cantidad,
+            price: findDataId.price ,
+            name: findDataId.gunName
         }
         setAddItems([...addItems, object])
     }
 
     const isInCar = (id) => {
-        console.log(id)
         const findItem = addItems.find(element => element.itemId === id)
-        console.log(findItem.itemId)
         if(findItem){
             console.log("Existe")
             return true;
@@ -60,7 +77,7 @@ export const ItemCount = props =>{
         setAddItems([])
     } 
 
-    console.log(addItems)
+
 
     return (press===false) ?
         <div className="butonContainer">
@@ -74,7 +91,7 @@ export const ItemCount = props =>{
         <div className="butonContainer">
             <Link className="boton" to={`/Cart`}>Confirmar Compra</Link>
             <button className="boton" onClick={() => handlePress(false)}> Deshacer compra</button>
-            {/* <button className="boton" onClick={() => console.log(addItems)}> Comprobar contexto</button> */}
+            <button className="boton" onClick={() => console.log(addItems)}> Comprobar contexto</button>
             <button className="boton" onClick={() => removeItem(stockId)}> Eliminar este item</button>
             <button className="boton" onClick={() => isInCar(stockId)}> Comprobar existencia</button>
             <button className="boton" onClick={() => clearCart()}> Clear context</button>

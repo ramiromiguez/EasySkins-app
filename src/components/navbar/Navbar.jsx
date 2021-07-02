@@ -13,7 +13,7 @@ export const Navbar = () => {
       <div className="container-fluid">
         <div className="brandCartDiv">
           <Link className="navbar-brand" to={`/`}>EasySkins</Link>
-          <CartWidget/>
+          <Link to={'/cart'}><CartWidget/></Link>
         </div>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

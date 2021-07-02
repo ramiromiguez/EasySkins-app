@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import  Navbar  from '../components/navbar/Navbar'     
-import ItemListContainer from '../components/itemlistcontainer/ItemListContainer';        
+import  Navbar  from '../Components/Navbar/Navbar'     
+import ItemListContainer from '../Components/ItemListContainer/ItemListContainer';        
 import ItemDetailContainer from '../components/itemdetailcontainer/ItemDetailContainer';
 
-const Rout =  () => {
+const Route =  () => {
     return (
     <BrowserRouter>
         <Navbar/>
@@ -23,4 +23,4 @@ const Rout =  () => {
     );
 }
 
-export default Rout
+export default Route
