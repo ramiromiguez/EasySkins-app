@@ -5,7 +5,7 @@
         "category": "knife",
         "state":"MW",
         "float":"0.07584947",
-        "price":"$2000",
+        "price":2000,
         "show": "true",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjxPr7Dl2dV18hwmOvN8IXvjVCLpxo7Oy3tIdLEdgdqNAmBqFa_kO3mh8K9uJqbyiMy7HIn5H3VzUPl1B0dO7M7hOveFwvYitsMFw/360fx360f",
         "detalle": "cuchillo tactico"
@@ -16,7 +16,7 @@
         "category": "M4A1-S",
         "state":"FN",
         "float":"0.00433277",
-        "price":"$2020",
+        "price":2020,
         "show": "true",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uOxh7-Gw_alDLbUlWNQ18x_jvzS4Z78jUeLpxo7Oy3tJo-ScVVoZAuB8wW_xOft0ZC6uZ-bn3Nn63Mq7C2Oyx2yiBsYarNv1OveFwt9ELX6XQ/360fx360f",
         "detalle": "rifle de asalto"
@@ -27,7 +27,7 @@
         "category":"gloves",
         "state":"FN",
         "float":"0.006801648",
-        "price":"$4300",
+        "price":4300,
         "show": "true",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAQ1h3LAVbv6mxFABs3OXNYgJR_Nm1nYGHnuTgDL3Tn1Rd4cJ5ntbN9J7yjRrlrkBtZ2zwJYaVc1M4N1_YqFftwry5hJC77ZvOwSBn63F0tneJm0awn1gSOeTQ2mnL/360fx360f",
         "detalle": "guantes usados por fuerzas especiales"
@@ -38,7 +38,7 @@
         "category":"ak",
         "state":"FT",
         "float":"0.20222768",
-        "price":"$5800",
+        "price":5800,
         "show": "false",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5lpKKqPv9NLPF2G1UsZFw373Cp96kigbgrUBuY22nLIWUcgRvN17Y8lnrlbrm157quJ3XiSw0p7BLliM/360fx360f",
         "detalle": "rifle de asalto"
@@ -49,7 +49,7 @@
         "category":"awp",
         "state":"FN",
         "float":"0.03585305",
-        "price":"$7800",
+        "price":7800,
         "show": "true",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAZh7PLfYQJE7dizq4yCkP_gDLfQhGxUppF0076Z8N2miwfn8kU_YjvycYWXJw83YgmGqFW4w7281MW5ucnOwXF9-n51Xlh34oU/360fx360f",
         "detalle": "rifle de presicion"
@@ -60,7 +60,7 @@
         "category":"usp-s",
         "state":"FN",
         "float":"0.00116184",
-        "price":"$1800",
+        "price":1800,
         "show": "false",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j3Jq_ummJW4NE_376S84-tiwHt_0VqZDzwI47DcVNqaFDZ-gLrxea918S5tJucwSY2uj5iuygjNe-uOA/360fx360f",
         "detalle": "pistola calibre 9mm"
@@ -71,7 +71,7 @@
         "category": "knife",
         "state":"FW",
         "float":"0.02057414",
-        "price":"$29900",
+        "price":29900,
         "show": "false",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1f_BYQJD4eOzmYWZlvvwDLbQhGld7cxrj-3--YXygED6-UBlZWGiIICVdQBoZFHR-Fftk7y8hsTotZjAmiFhuil2ti6ImkCwhQYMMLJIJJ_2Qw/360fx360f",
         "detalle": "cuchillo tactico"
@@ -82,7 +82,7 @@
         "category": "knife",
         "state":"MW",
         "float":"0.07703563",
-        "price":"$23000",
+        "price":23000,
         "show": "false",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfxPrMfipP7dezhr-KmsjmJrnIqWZQ-sd9j-Db8IjKhF2zowcDPzixc9OLJ1I2NFjV-Vi_lOjm0JfovM6dnScw7yIj4yrdyRy20B1PZ7Q5g_HIGELeWfJNclpFPg/360fx360f",
         "detalle": "cuchillo tactico"
@@ -93,7 +93,7 @@
         "category": "knife",
         "state":"FW",
         "float":"0.01145713",
-        "price":"$1200",
+        "price":1200,
         "show": "false",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjnMqvBnmJD7fp8i_vD-Yn8klGwlB81NDG3OtSUJgY7YVvS-VfolLq7hsO5tZ_OnXo3uyhz7SyPnhGx0xoeb-dugKOACQLJ28w8Lgw/360fx360f",
         "detalle": "cuchillo tactico"
@@ -104,7 +104,7 @@
         "category":"ak",
         "state":"MW",
         "float":"0.12474653",
-        "price":"$3200",
+        "price":3200,
         "show": "true",
         "photo":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV092lnYmGmOHLP7LWnn8fvpMkjOqS99Smiwzk_0VvamH0LIHEdwFqYw2G_QC3lefsjZS4uJXLyWwj5HclxVTx0A/360fx360f",
         "detalle": "rifle de asalto"

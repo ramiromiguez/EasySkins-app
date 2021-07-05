@@ -1,6 +1,6 @@
 import React from 'react'
 import './ItemListContainer.scss'
-import ItemList from './Components/itemList/ItemList'
+import ItemList from './Components/ItemList/ItemList'
 import { useState, useEffect } from 'react'
 import skinsList from '../../DataBase/items.json'
 import { useParams } from 'react-router-dom'
