@@ -5,16 +5,17 @@ import {Cart} from './Cart'
 
 
 export const CartContainer = () => {
-    const [addItems, setAddItems] = useContext(CartContext)
+    
+    const [addItems] = useContext(CartContext)
     
     return (
         <div>
             <div className="container">
             <div className="row">
-                {
-                addItems.map((element, id) => 
-                <Cart key= {id} {...element}
-                />)}
+            {
+            addItems.map((element, id) => 
+            <Cart key= {id} {...element}/>)
+            }
             </div>
         </div>
         </div>

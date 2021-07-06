@@ -3,7 +3,7 @@ import './App.scss';
 import Navbar from './Components/Navbar/Navbar.jsx'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer.jsx';      
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer.jsx';
-import Cart from './Components/Navbar/CartContainer'
+import CartContainer from './Components/Navbar/CartContainer'
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { CartContextProvider } from "./Context/CartContext"
 
@@ -27,7 +27,7 @@ const App = props => {
               <ItemDetailContainer/>
             </Route>
             <Route exact path="/cart">
-              <Cart/>
+              <CartContainer/>
             </Route>
           </Switch>
         </BrowserRouter>
