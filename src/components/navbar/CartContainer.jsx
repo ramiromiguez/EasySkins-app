@@ -9,15 +9,15 @@ export const CartContainer = () => {
     const [addItems] = useContext(CartContext)
     
     return (
-        <div>
-            <div className="container">
+        <div className="container">
             <div className="row">
-            {
-            addItems.map((element, id) => 
-            <Cart key= {id} {...element}/>)
-            }
+                {
+                addItems.length > 0 ?
+                    addItems.map((element, id) => 
+                    <Cart key= {id} {...element}/>)
+
+                    :<h1 className="text-white">No hay nada en el carro</h1>}
             </div>
-        </div>
         </div>
     )
 }

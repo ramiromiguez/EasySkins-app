@@ -17,7 +17,7 @@ export const CartContextProvider = ({children}) => {
                 stock: stockSelected + findId.stock,
                 price: findDataId.price,
                 name: findDataId.gunName,
-                stockLimited: findId.stockLimit
+                stockLimit: findId.stockLimit
             }
             return setAddItems([...new_items, object])
         }
@@ -28,10 +28,10 @@ export const CartContextProvider = ({children}) => {
             name: findDataId.gunName,
             stockLimit: maxStock
         }
-        return setAddItems([...addItems, object])
+        setAddItems([...addItems, object])
     }
 
-    const  StockLeft = (id, stockSelected) => {
+    const  AddNewStock = (id, stockSelected) => {
         const findItem = addStock.find(element => element.id === id)
         if(findItem){
             const new_items = (addStock.filter(element => element.id !== id)) 
@@ -46,7 +46,16 @@ export const CartContextProvider = ({children}) => {
             stock: stockSelected
         }
         setAddStock([...addStock, object])
-        return 0
+    }
+
+    const StockChecker = (id) => {
+        const findItem = addStock.find(element => element.id === id)
+        if(findItem){
+            return findItem.stock
+        }
+        else{
+            return 0
+        }
     }
 
     const RemoveItem = (id) => {
@@ -70,7 +79,7 @@ export const CartContextProvider = ({children}) => {
     } 
 
     return (
-        <CartContext.Provider value={[addItems, setAddItems, AddNewItem, RemoveItem, IsInCar, ClearCart, StockLeft, addStock, setAddStock]}>
+        <CartContext.Provider value={[addItems, setAddItems, AddNewItem, RemoveItem, IsInCar, ClearCart, addStock, setAddStock, AddNewStock, StockChecker]}>
             {children}
         </CartContext.Provider>
     )

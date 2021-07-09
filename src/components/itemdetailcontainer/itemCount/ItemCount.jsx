@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useContext, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './ItemCount.scss'
 import { CartContext } from '../../../Context/CartContext'
 
@@ -8,9 +8,8 @@ const ShowMessage = ({stock}) =>{
      return <h4>{`Vas a comprar ${stock}`}</h4>
  }
 
- const ButtonPlusOne = ({stock, changeStock, maxStock, StockLeft, id}) =>{
-    const [stockQuantity, setStockQuantity] = useState();
-     return <button className="boton" onClick={() => changeStock(stock + 1)} disabled={stock<maxStock?false:true}> +1 </button>
+ const ButtonPlusOne = ({stock, changeStock, maxStock, stockAlreadySelected}) =>{
+    return <button className="boton" onClick={() => changeStock(stock + 1)} disabled={stock<maxStock-stockAlreadySelected?false:true}> +1 </button>
 }
 
 const ButtonMinusOne = ({stock, changeStock}) =>{
@@ -29,21 +28,27 @@ export const ItemCount = props =>{
     const handlePress = value => setPress(value);
     const stockMaxQuantity = props.element.stock
     const stockId = props.element.id
-    const [addItems, setAddItems, AddNewItem, RemoveItem, IsInCar, ClearCart, StockLeft, addStock, setAddStock] = useContext(CartContext)
+    const [addItems, setAddItems, AddNewItem, RemoveItem, IsInCar, ClearCart, addStock, setAddStock, AddNewStock, StockChecker] = useContext(CartContext)
     const itemsDataArray = props.elementData
-    const [stockQuantity, setStockQuantity] = useState();
-    
+    const [stockData, setStockData] = useState();
+    const [stockAlreadySelected, setStockAlreadySelected] = useState(0);
+   
+
+    useEffect(() => {
+        setStockAlreadySelected(StockChecker(stockId))
+    },[stockId])
+
     return (press===false) ?
         <div className="butonContainer">
             <ShowMessage stock={stock}/>
             <ButtonMinusOne stock={stock} changeStock={handleStock}/>
             <ButtonAddCart stock={stock} changePress={handlePress}/>
-            <ButtonPlusOne  stock={stock} changeStock={handleStock} addStock={addStock} id={stockId}/>
+            <ButtonPlusOne  stock={stock} changeStock={handleStock} maxStock={stockMaxQuantity} addStock={addStock} stockAlreadySelected={stockAlreadySelected}/>
             <button className="boton" onClick={() => IsInCar(stockId)}> Comprobar existencia</button>
         </div>
         :
         <div className="butonContainer">
-            <Link className="boton" to={`/Cart`} onClick={() => AddNewItem(stockId,stock, stockMaxQuantity, itemsDataArray) + StockLeft(stockId, stock)}>Confirmar Compra</Link>
+            <Link className="boton" to={`/Cart`} onClick={() => AddNewItem(stockId,stock, stockMaxQuantity, itemsDataArray) + AddNewStock(stockId, stock)}>Confirmar Compra</Link>
             <button className="boton" onClick={() => handlePress(false)}> Deshacer compra</button>
             <button className="boton" onClick={() => console.log(addItems)}> Comprobar contexto</button>
             <button className="boton" onClick={() => RemoveItem(stockId)}> Eliminar este item</button>
