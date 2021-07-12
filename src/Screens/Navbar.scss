@@ -16,12 +16,14 @@ $ColorVioleta: rgb(58, 3, 75);
     font-size: 200%;
 }
 
-.navbar .cart{
+.navbar .cartWidget{
+    .cart{
     color: white;
-    margin-right: 4rem;
-    margin-left: 1rem;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    }
+    h5{
+        font-size: 1rem;
+    }
 }
 
 .navbar .nav-item{

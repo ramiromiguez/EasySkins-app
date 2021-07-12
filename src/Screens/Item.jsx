@@ -1,6 +1,4 @@
 import React from 'react'
-import './itemList.scss'
-import './ItemList'
 import { Link } from 'react-router-dom'
 
 

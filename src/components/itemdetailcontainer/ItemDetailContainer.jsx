@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import skinsList from '../../DataBase/items.json'
-import ItemDetail from './ItemDetail'
+import ItemDetail from '../../Screens/ItemDetail'
 import { useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
@@ -23,13 +23,14 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         getItem();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[itemId])
 
 
     return (
         <div className="container">
             <div className="row">
-                {<ItemDetail element={itemSelector}/>} 
+                <ItemDetail element={itemSelector}/>
             </div>
         </div>
     )

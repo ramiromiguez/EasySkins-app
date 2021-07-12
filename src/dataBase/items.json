@@ -12,7 +12,7 @@
     {
         "id":1,
         "gunName":"M4A1-S",
-        "category": "M4A1-S",
+        "category": "m4a1-s",
         "state":"FN",
         "float":"0.00433277",
         "price":2020,

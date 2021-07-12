@@ -1,6 +1,6 @@
 import React from 'react'
 import './ItemListContainer.scss'
-import ItemList from './Components/ItemList/ItemList'
+import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
 import skinsList from '../../DataBase/items.json'
 import { useParams } from 'react-router-dom'
@@ -37,6 +37,7 @@ const ItemListContainer = props =>  {
         else{
             showAllItems();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[categoryName])
 
     return (

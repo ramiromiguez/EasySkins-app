@@ -1,6 +1,5 @@
 import React from 'react'
-import { Item } from './Item'
-import './itemList.scss'
+import { Item } from '../../Screens/Item'
 
 
 export const ItemList = props => {
