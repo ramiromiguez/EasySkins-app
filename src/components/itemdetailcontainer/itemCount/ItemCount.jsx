@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useContext, useEffect} from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import './ItemCount.scss'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../../Context/CartContext'
 
 const ShowMessage = ({stock}) =>{
@@ -44,18 +43,13 @@ export const ItemCount = props =>{
             <ButtonMinusOne stock={stock} changeStock={handleStock}/>
             <ButtonAddCart stock={stock} changePress={handlePress}/>
             <ButtonPlusOne  stock={stock} changeStock={handleStock} maxStock={stockMaxQuantity} addStock={addStock} stockAlreadySelected={stockAlreadySelected}/>
-            <button className="boton" onClick={() => IsInCar(stockId)}> Comprobar existencia</button>
         </div>
         :
         <div className="butonContainer">
             <Link className="boton" to={`/Cart`} onClick={() => AddNewItem(stockId,stock, stockMaxQuantity, itemsDataArray) + AddNewStock(stockId, stock)}>Confirmar Compra</Link>
             <button className="boton" onClick={() => handlePress(false)}> Deshacer compra</button>
-            <button className="boton" onClick={() => console.log(addItems)}> Comprobar contexto</button>
             <button className="boton" onClick={() => RemoveItem(stockId)}> Eliminar este item</button>
-            <button className="boton" onClick={() => IsInCar(stockId)}> Comprobar existencia</button>
             <button className="boton" onClick={() => ClearCart()}> Clear context</button>
-            <button className="boton" onClick={() => console.log(addStock)}> stockLeft</button>
-
         </div>       
 }
 

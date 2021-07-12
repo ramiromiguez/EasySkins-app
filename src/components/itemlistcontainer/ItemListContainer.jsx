@@ -1,5 +1,4 @@
 import React from 'react'
-import './ItemListContainer.scss'
 import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
 import skinsList from '../../DataBase/items.json'
@@ -31,7 +30,6 @@ const ItemListContainer = props =>  {
     
     useEffect(() => {
         if(categoryName){
-            console.log("Me ejecuto")
             showItemsByCategory();
         }
         else{
@@ -41,10 +39,7 @@ const ItemListContainer = props =>  {
     },[categoryName])
 
     return (
-        <div className="itemListContainer">
             <ItemList data={dataReformed}/>
-            
-        </div>
 )}
         
 

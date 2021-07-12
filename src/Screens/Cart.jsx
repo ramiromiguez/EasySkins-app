@@ -68,7 +68,15 @@ export const Cart = () => {
             </div>
         </div>
     ):(
-        <h1>no hay items</h1>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-10 text-center">
+                    <h1 className="text-light">There are no skins in the cart :(</h1>
+                    <h1 className="text-light">Go home and add some skins!</h1>
+                    <button className="btn btn-outline-light btn-lg mt-4">home</button>
+                </div>
+            </div>
+        </div>
     )
 }
 

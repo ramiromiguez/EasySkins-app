@@ -1,6 +1,6 @@
 import React from 'react'
 import { Item } from '../../Screens/Item'
-
+import '../../Screens/item.scss'
 
 export const ItemList = props => {
     const { data } = props;
