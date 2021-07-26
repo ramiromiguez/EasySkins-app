@@ -5,8 +5,8 @@ import '../../Screens/item.scss'
 export const ItemList = props => {
     const { data } = props;
     return(
-        <div className="container">
-            <div className="row">
+        <div className="container-fluid">
+            <div className="row mx-2">
                 {
                 data.map((element, id) => 
                 <Item key= {id} {...element}

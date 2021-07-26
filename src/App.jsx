@@ -30,7 +30,7 @@ const App = props => {
             <Route exact path="/cart">
               <Cart/>
             </Route>
-            <Route exact path="/confirmbuy">
+            <Route exact path="/ConfirmBuy">
               <ConfirmBuy/>
             </Route>
           </Switch>

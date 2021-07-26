@@ -1,3 +1,11 @@
+@import './GlobalStyles.scss';
+
 .container{
+    margin-top: 1rem;
     color: white;
+}
+
+.top h3{
+    font-family: $FontYanone;
+    font-size: 2rem;
 }

@@ -1,6 +1,4 @@
-$FontOdibeSans: 'Odibee Sans', cursive;
-$FontYanone: 'Yanone Kaffeesatz', sans-serif;
-$ColourDarkViolet: rgb(58, 3, 75);
+@import './GlobalStyles.scss';
 
 .navbar{
     background-color: $ColourDarkViolet;
@@ -13,7 +11,7 @@ $ColourDarkViolet: rgb(58, 3, 75);
 .navbar .navbar-brand{
     font-family: $FontOdibeSans;
     margin-left: 2px;
-    font-size: 200%;
+    font-size: 3rem;
 }
 
 .navbar .cartWidget{
@@ -36,3 +34,8 @@ $ColourDarkViolet: rgb(58, 3, 75);
     font-size: 110%;
 }
 
+.navbar .navlinks{
+    font-family: $FontYanone;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}

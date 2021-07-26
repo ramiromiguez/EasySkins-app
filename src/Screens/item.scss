@@ -1,11 +1,8 @@
-$ColourDarkViolet: rgb(58, 3, 75);
-$ColourLightViolet: rgb(133, 45, 155);
-$FontOdibeSans: 'Odibee Sans', cursive;
-$FontYanone: 'Yanone Kaffeesatz', sans-serif;
+@import './GlobalStyles.scss';
 
 
 .row{
-    margin-top:1em;
+    margin-top: 10px;
 }
 
 .item{
@@ -26,7 +23,7 @@ $FontYanone: 'Yanone Kaffeesatz', sans-serif;
     }
     .name{
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 2rem;
         color: whitesmoke;
         margin-top: 0.1rem;
     }
