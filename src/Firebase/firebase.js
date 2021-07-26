@@ -1,5 +1,6 @@
-import firebase from "firebase/app";
 import 'firebase/firestore'
+import firebase from "firebase/app";
+
 
 // web apps firebase config
 const firebaseConfig = {
@@ -12,7 +13,8 @@ const firebaseConfig = {
 };
 
 // initialize firebase
-const fb = firebase.initializeApp(firebaseConfig);
+const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app()
 
-// accesible for everyone
-export const dataBase = fb.firestore();
+
+export const dataBase = app.firestore()
+export const itemsCollection = firebase.firestore(app).collection("items");

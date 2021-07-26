@@ -7,16 +7,15 @@ export const CartContextProvider = ({children}) => {
     const [addItems, setAddItems] = useState([])
     const [addStock, setAddStock] = useState([])
 
-    const AddNewItem = (stockDataId, stockSelected, maxStock, itemsDataArray) =>{
+    const AddNewItem = (stockDataId, stockSelected, maxStock, itemName, itemPrice) =>{
         const findId = addItems.find(element => element.id === stockDataId); 
-        const findDataId = itemsDataArray.find(element => element.id === stockDataId);
         if(findId){
             const new_items = (addItems.filter(element => element.id !== stockDataId)) 
             const object = {
                 id : stockDataId,
                 stock: stockSelected + findId.stock,
-                price: findDataId.price,
-                name: findDataId.gunName,
+                price: findId.price,
+                name: findId.gunName,
                 stockLimit: findId.stockLimit
             }
             return setAddItems([...new_items, object])
@@ -24,8 +23,8 @@ export const CartContextProvider = ({children}) => {
         const object = {
             id : stockDataId,
             stock: stockSelected,
-            price: findDataId.price,
-            name: findDataId.gunName,
+            price: itemPrice,
+            name: itemName,
             stockLimit: maxStock
         }
         setAddItems([...addItems, object])

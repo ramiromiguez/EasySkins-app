@@ -1,45 +1,47 @@
 import React from 'react'
 import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
-import skinsList from '../../DataBase/items.json'
 import { useParams } from 'react-router-dom'
+import { itemsCollection } from '../../Firebase/firebase'
 
 
 const ItemListContainer = props =>  {
     
-    const [dataReformed, setDataReformed] = useState([]);
-    const {categoryName} = useParams();
+    const [items, setItems] = useState([]);
+    const {category} = useParams();
 
-    const myPromise = new Promise ((resolve,reject) =>{
-        setTimeout(() => resolve(
-            skinsList
-        ),2000) 
-    });
-    
+    useEffect(() => {
+    },[])
+
     const showAllItems = () =>{ 
-        myPromise
-            .then(result =>  setDataReformed(result))
-            .catch(error => console.log("error"))
+        (async ()=>{
+            const response = await itemsCollection.get()
+            setItems(response.docs.map(item => ({ id: item.id, ...item.data()})))
+        })();
     }
 
     const showItemsByCategory = () =>{ 
-        myPromise
-            .then(result =>  setDataReformed(result.filter( result => result.category === categoryName)))
-            .catch(error => console.log("error"))
+        const filteredCollection = itemsCollection.where("category", "==", category);
+        filteredCollection.get().then((response) => {
+          const filteredItems = response.docs.map((element) => {
+            return { ...element.data(), id: element.id };
+          });
+          setItems(filteredItems);
+        });
     }
     
     useEffect(() => {
-        if(categoryName){
+        if(category){
             showItemsByCategory();
         }
         else{
             showAllItems();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[categoryName])
+    },[category])
 
     return (
-            <ItemList data={dataReformed}/>
+            <ItemList data={items}/>
 )}
         
 

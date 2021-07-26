@@ -22,14 +22,13 @@ const ButtonAddCart = ({changePress, stock}) =>{
 export const ItemCount = props =>{
     const [stock, setStock] = useState(0);
     const [press,setPress] = useState(false);
-
     const handleStock = value => setStock(value);
     const handlePress = value => setPress(value);
     const stockMaxQuantity = props.element.stock
     const stockId = props.element.id
+    const itemName = props.element.gunName
+    const itemPrice = props.element.price
     const [addItems, setAddItems, AddNewItem, RemoveItem, IsInCar, ClearCart, addStock, setAddStock, AddNewStock, StockChecker] = useContext(CartContext)
-    const itemsDataArray = props.elementData
-    const [stockData, setStockData] = useState();
     const [stockAlreadySelected, setStockAlreadySelected] = useState(0);
    
 
@@ -46,7 +45,7 @@ export const ItemCount = props =>{
         </div>
         :
         <div className="butonContainer">
-            <Link className="boton" to={`/Cart`} onClick={() => AddNewItem(stockId,stock, stockMaxQuantity, itemsDataArray) + AddNewStock(stockId, stock)}>Confirmar Compra</Link>
+            <Link className="boton" to={`/Cart`} onClick={() => AddNewItem(stockId,stock, stockMaxQuantity, itemName, itemPrice) + AddNewStock(stockId, stock)}>Confirmar Compra</Link>
             <button className="boton" onClick={() => handlePress(false)}> Deshacer compra</button>
             <button className="boton" onClick={() => RemoveItem(stockId)}> Eliminar este item</button>
             <button className="boton" onClick={() => ClearCart()}> Clear context</button>
@@ -54,4 +53,3 @@ export const ItemCount = props =>{
 }
 
 export default ItemCount
-
