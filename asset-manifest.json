@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/EasySkins-app/static/css/main.ff4bdfe8.chunk.css",
+    "main.js": "/EasySkins-app/static/js/main.792438ac.chunk.js",
+    "main.js.map": "/EasySkins-app/static/js/main.792438ac.chunk.js.map",
+    "runtime-main.js": "/EasySkins-app/static/js/runtime-main.ef770f7b.js",
+    "runtime-main.js.map": "/EasySkins-app/static/js/runtime-main.ef770f7b.js.map",
+    "static/js/2.7f546348.chunk.js": "/EasySkins-app/static/js/2.7f546348.chunk.js",
+    "static/js/2.7f546348.chunk.js.map": "/EasySkins-app/static/js/2.7f546348.chunk.js.map",
+    "index.html": "/EasySkins-app/index.html",
+    "static/css/main.ff4bdfe8.chunk.css.map": "/EasySkins-app/static/css/main.ff4bdfe8.chunk.css.map",
+    "static/js/2.7f546348.chunk.js.LICENSE.txt": "/EasySkins-app/static/js/2.7f546348.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef770f7b.js",
+    "static/js/2.7f546348.chunk.js",
+    "static/css/main.ff4bdfe8.chunk.css",
+    "static/js/main.792438ac.chunk.js"
+  ]
+}
