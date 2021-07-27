@@ -28,7 +28,7 @@ export const ItemCount = props => {
     const stockId = props.element.id
     const itemName = props.element.gunName
     const itemPrice = props.element.price
-    const { AddNewItem, RemoveItem, ClearCart, addStock, StockChecker } = useContext(CartContext)
+    const { AddNewItem, addStock, StockChecker } = useContext(CartContext)
     const [stockAlreadySelected, setStockAlreadySelected] = useState(0);
 
 

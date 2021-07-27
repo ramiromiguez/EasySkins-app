@@ -1,19 +1,17 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import { dataBase, itemsCollection } from '../Firebase/firebase'
+import { dataBase } from '../Firebase/firebase'
 import firebase from "firebase/app";
 import 'firebase/firestore'
 import { CartContext } from '../Context/CartContext'
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 
 export const ConfirmBuy = () => {
     
-    const {register, handleSubmit, errors} = useForm(0)
+    const {register, handleSubmit,} = useForm(0)
     const {addItems} = useContext(CartContext)
-    const [ buyer, setBuyer ] = useState({})
-    const [orderNumber, setOrderNumber] = useState("");
     const [orderId, setOrderId] = useState();
-    const [outOfStockArr, setOutOfStockArr] = useState([]);
+    const [setOutOfStockArr] = useState([]);
     const [ switcher, setSwitcher ] = useState([false]);
 
     const itemsToUpdate = dataBase.collection("items")
@@ -74,13 +72,9 @@ export const ConfirmBuy = () => {
             <h1> Surname</h1>
             <input {...register("surname", { required: true, pattern: /^([a-zA-Z]|\s)*$/i })}/>
             <h1> Email </h1>
-            <input {...register("email", { required: true})}/>
-            <h1> Gender</h1>
-            <select {...register("gender")}>
-                <option value="female">female</option>
-                <option value="male">male</option>
-                <option value="other">other</option>
-            </select>
+            <input {...register("email", { required: true , pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/ })}/>
+            <h1> Phone </h1>
+            <input {...register("phone", { required: true })}/>
             {switcher?
             <input type="submit"/>
             :
