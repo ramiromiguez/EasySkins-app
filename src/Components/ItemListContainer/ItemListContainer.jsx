@@ -2,7 +2,7 @@ import React from 'react'
 import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { itemsCollection } from '../../Firebase/firebase'
+import { dataBase } from '../../Firebase/firebase'
 
 
 const ItemListContainer = props =>  {
@@ -15,13 +15,13 @@ const ItemListContainer = props =>  {
 
     const showAllItems = () =>{ 
         (async ()=>{
-            const response = await itemsCollection.get()
+            const response = await dataBase.collection("items").get()
             setItems(response.docs.map(item => ({ id: item.id, ...item.data()})))
         })();
     }
 
     const showItemsByCategory = () =>{ 
-        const filteredCollection = itemsCollection.where("category", "==", category);
+        const filteredCollection = dataBase.collection("items").where("category", "==", category);
         filteredCollection.get().then((response) => {
           const filteredItems = response.docs.map((element) => {
             return { ...element.data(), id: element.id };

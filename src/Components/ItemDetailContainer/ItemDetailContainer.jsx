@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import ItemDetail from '../../Screens/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { itemsCollection } from '../../Firebase/firebase';
+import { dataBase } from '../../Firebase/firebase';
 
 function ItemDetailContainer() {
     
@@ -10,10 +10,10 @@ function ItemDetailContainer() {
    
 
     const [item, setItem] = useState();
-
+    
     useEffect(() => {
         (async () => {
-            const response = await itemsCollection.doc(id).get();
+            const response = await dataBase.collection("items").doc(id).get();
             setItem({ id : response.id, ...response.data() });
         })();
       }, [id]);
