@@ -10,9 +10,6 @@ const ItemListContainer = props =>  {
     const [items, setItems] = useState([]);
     const {category} = useParams();
 
-    useEffect(() => {
-    },[])
-
     const showAllItems = () =>{ 
         (async ()=>{
             const response = await dataBase.collection("items").get()

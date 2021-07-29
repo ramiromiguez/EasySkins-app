@@ -5,7 +5,7 @@ import './ItemDetail.scss'
 
 export const ItemDetail = props => {
     return props.element ?  (
-        <div className="cards col-sm-10 col-md-8 mx-auto my-3 border border-white rounded">
+        <div className="cards animate__animated animate__fadeInDown">
             <h2 className="text-center">{props.element.gunName}</h2>
             <img src={props.element.photo} alt=""/>
             <h6>State: {props.element.state}</h6>

@@ -1,21 +1,24 @@
 @import './GlobalStyles.scss';
 
-h2{
-    font-family: $FontYanone;
-    font-size: 3rem;
-}
-
-h6{
-    font-size: 1.2rem;
-}
-
 .cards{
     background-color: $ColourLightViolet;
-}
-
-img{
-    display: block;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    h2{
+        font-family: $FontOdibeSans;
+        font-size: 3rem;
+    }
+    
+    h6{
+        font-size: 1.2rem;
+        font-family: $FontRoboto;
+    }    
 }
+

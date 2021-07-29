@@ -5,7 +5,7 @@ import './item.scss'
 
 export const Item = props => {
     return (
-            <div className="col-6 col-md-3 item">
+            <div className="item animate__animated animate__backInLeft">
                 <Link to={"/item/"+ props.id} className="link">
                     <h4 className="name">{props.gunName}</h4>
                     <img src={props.photo} alt="" className="photo"/>
