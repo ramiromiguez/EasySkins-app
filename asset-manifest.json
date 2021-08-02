@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/EasySkins-app/static/css/main.ffc536fb.chunk.css",
-    "main.js": "/EasySkins-app/static/js/main.712320f9.chunk.js",
-    "main.js.map": "/EasySkins-app/static/js/main.712320f9.chunk.js.map",
-    "runtime-main.js": "/EasySkins-app/static/js/runtime-main.ef770f7b.js",
-    "runtime-main.js.map": "/EasySkins-app/static/js/runtime-main.ef770f7b.js.map",
-    "static/js/2.36297749.chunk.js": "/EasySkins-app/static/js/2.36297749.chunk.js",
-    "static/js/2.36297749.chunk.js.map": "/EasySkins-app/static/js/2.36297749.chunk.js.map",
-    "index.html": "/EasySkins-app/index.html",
-    "static/css/main.ffc536fb.chunk.css.map": "/EasySkins-app/static/css/main.ffc536fb.chunk.css.map",
-    "static/js/2.36297749.chunk.js.LICENSE.txt": "/EasySkins-app/static/js/2.36297749.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.ffc536fb.chunk.css",
+    "main.js": "/static/js/main.712320f9.chunk.js",
+    "main.js.map": "/static/js/main.712320f9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.39f953f4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.39f953f4.js.map",
+    "static/js/2.4ae9a1cf.chunk.js": "/static/js/2.4ae9a1cf.chunk.js",
+    "static/js/2.4ae9a1cf.chunk.js.map": "/static/js/2.4ae9a1cf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.ffc536fb.chunk.css.map": "/static/css/main.ffc536fb.chunk.css.map",
+    "static/js/2.4ae9a1cf.chunk.js.LICENSE.txt": "/static/js/2.4ae9a1cf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ef770f7b.js",
-    "static/js/2.36297749.chunk.js",
+    "static/js/runtime-main.39f953f4.js",
+    "static/js/2.4ae9a1cf.chunk.js",
     "static/css/main.ffc536fb.chunk.css",
     "static/js/main.712320f9.chunk.js"
   ]
