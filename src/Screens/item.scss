@@ -25,11 +25,11 @@
         text-align: center;
         min-height: 5rem;
         font-size: 2rem;
-        color: whitesmoke;
+        color: white;
         margin-top: 0.1rem;
     }
     h6{
-        color: whitesmoke;
+        color: white;
         font-size: 1rem;
         margin: 0px;
     }
@@ -39,5 +39,6 @@
 }
 
 .item:hover{
-    transform: translate3D(0,-1px,0) scale(1.03);
+    transform: scale(1.1); 
+    background-color: white;
 }

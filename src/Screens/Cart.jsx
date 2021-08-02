@@ -2,12 +2,11 @@ import React from 'react'
 import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Context/CartContext'
-import { ConfirmBuy } from '../Screens/ConfirmBuy'
+import { ConfirmBuy } from '../Components/Cart/ConfirmBuy'
 import { EmptyCart } from '../Components/Cart/EmptyCart'
 import { OutOfStock } from '../Components/Cart/OutOfStock'
 import { FinishedBuy } from '../Components/Cart/FinishedBuy'
 import CartItems from '../Components/Cart/CartItems'
-
 import './cart.scss'
 
 
@@ -15,35 +14,22 @@ export const Cart = () => {
 
     const { addItems, CartTotalPrice } = useContext(CartContext)
     const [total, setTotal] = useState(0)
-    const [switcher, setSwitcher] = useState(0)
-    const [cartSwitcher, setCartSwitcher] = useState(false)
-    const [outOfStockArr, setOutOfStockArr] = useState();
-
-    console.log(outOfStockArr)
+    const [cartSwitcher, setCartSwitcher] = useState(0)
+    const [outOfStockArr, setOutOfStockArr] = useState([]);
+    const [orderId, setOrderId] = useState();
+    console.log(cartSwitcher)
     useEffect(() => {
         setTotal(CartTotalPrice())
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [CartTotalPrice])
 
     useEffect(() => {
-        setSwitcher(0);
+        setCartSwitcher(0);
     }, [])
 
-    const checkSwitcher = () => {
-        switch (switcher) {
-            case 0: return <ConfirmBuy setSwitcher={setSwitcher} total={total} setOutOfStockArr={setOutOfStockArr} outOfStockArr={outOfStockArr}/>; // Caso 0 : Caso pre confirmar compra
-            case 1: return <OutOfStock setSwitcher={setSwitcher} />
-            case 2: return <FinishedBuy setCartSwitcher={setCartSwitcher} />
-            default: return null
-
-        }
-    }
-
-
-
-    return addItems.length > 0 && cartSwitcher === false ? (
+    return addItems.length > 0 && cartSwitcher === 0 ? (
         <div className="container">
-            <table className="table text-light mt-2">
+            <table className="table text-light mt-4 border">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -68,14 +54,28 @@ export const Cart = () => {
                     </tr>
                 </tbody>
             </table>
-            {checkSwitcher()}
-
+            <h4 className="text-center mt-5">Log in and submit to finish your buy! </h4>
+            <ConfirmBuy setCartSwitcher={setCartSwitcher} total={total} setOutOfStockArr={setOutOfStockArr} outOfStockArr={outOfStockArr} setOrderId={setOrderId} />
         </div>
-    ) : cartSwitcher === true ? (
-        <FinishedBuy setCartSwitcher={setCartSwitcher}/>
-    ) : (
-        <EmptyCart />
+    ) : cartSwitcher === 1 ? (
+        <FinishedBuy orderId={orderId} />
+    ) : cartSwitcher === 2 ? (
+        <div className="container text-center">
+            <h3 className="text-white">There is not stock available for the following guns:</h3>
+            {
+                outOfStockArr.map((element, id) =>
+                    <OutOfStock key={id} {...element}
+                    />)}
+            <h3 className="text-white">We removed the items that werent available</h3>
+            <h3 className="text-white">Go back to the cart to see your buy resume updated</h3>
+            <Link to={'/Cart'}>
+                <button className="btn btn-outline-light mb-2 mx-auto" onClick={() => setCartSwitcher(0)}>Cart</button>
+            </Link>
+        </div>
     )
+        : (
+            <EmptyCart />
+        )
 }
 
 export default Cart;
