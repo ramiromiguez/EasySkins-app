@@ -17,16 +17,16 @@ const App = props => {
               <Navbar/>
           </header>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/EasySkins-app/">
               <ItemListContainer/>
             </Route>
-            <Route exact path="/category/:category">
+            <Route exact path="/EasySkins-app/category/:category">
               <ItemListContainer/>
             </Route>
-            <Route exact path="/item/:id">
+            <Route exact path="/EasySkins-app/item/:id">
               <ItemDetailContainer/>
             </Route>
-            <Route exact path="/Cart">
+            <Route exact path="/EasySkins-app/Cart">
               <Cart/>
             </Route>
           </Switch>

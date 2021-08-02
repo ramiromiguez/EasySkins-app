@@ -17,7 +17,8 @@ export const Cart = () => {
     const [cartSwitcher, setCartSwitcher] = useState(0)
     const [outOfStockArr, setOutOfStockArr] = useState([]);
     const [orderId, setOrderId] = useState();
-    console.log(cartSwitcher)
+    
+    
     useEffect(() => {
         setTotal(CartTotalPrice())
         //eslint-disable-next-line react-hooks/exhaustive-deps
