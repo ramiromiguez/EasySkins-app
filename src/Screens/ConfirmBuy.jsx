@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { useForm } from "react-hook-form";
 import { dataBase } from '../Firebase/firebase'
@@ -5,23 +6,23 @@ import firebase from "firebase/app";
 import 'firebase/firestore'
 import { CartContext } from '../Context/CartContext'
 import { useState, useContext } from 'react';
+import OutOfStock from '../Components/Cart/OutOfStock';
 
-export const ConfirmBuy = () => {
+export const ConfirmBuy = ({setSwitcher, total, outOfStockArr, setOutOfStockArr}) => {
     
     const {register, handleSubmit,} = useForm(0)
     const {addItems} = useContext(CartContext)
     const [orderId, setOrderId] = useState();
-    const [setOutOfStockArr] = useState([]);
-    const [ switcher, setSwitcher ] = useState([false]);
+    
 
     const itemsToUpdate = dataBase.collection("items")
     .where(firebase.firestore.FieldPath.documentId(), 'in', addItems.map(i => i.id));
-
 
     const createOrder = (buyer) => {
         const newOrder = {
             buyer: buyer,
             items: addItems,
+            total: total,
             date: new Date(),
         }
         return newOrder;
@@ -34,7 +35,7 @@ export const ConfirmBuy = () => {
         try {
             orders.add(newOrder).then((doc) => {
             setOrderId(doc.id);
-            setSwitcher(false)
+            setSwitcher(2)
         })
         } catch(error) {
         console.log("Firebase add doc error:", error);
@@ -56,10 +57,13 @@ export const ConfirmBuy = () => {
 
         if(outOfStock.length === 0){
             batch.commit().then(() => {
-                addNewOrder(buyer);         
+                addNewOrder(buyer);      
             });
         } else {
             setOutOfStockArr(outOfStock);
+            console.log(OutOfStock)
+            setSwitcher(1)
+            return outOfStockArr
         }
     })
   }
@@ -69,20 +73,25 @@ export const ConfirmBuy = () => {
         <form onSubmit= {handleSubmit(addOrderUpdateItems)} >
             <h1> Name </h1>
             <input {...register("name", { required: true, pattern: /^([a-zA-Z]|\s)*$/i })}/>
-            <h1> Surname</h1>
+            <label for="exampleInputEmail1" class="form-label">Surname</label>
             <input {...register("surname", { required: true, pattern: /^([a-zA-Z]|\s)*$/i })}/>
-            <h1> Email </h1>
-            <input {...register("email", { required: true , pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/ })}/>
+            <label for="email" class="form-label">Email address</label>
+            <input placeholder="example@mail.com" {...register("email", { required: true , pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/ })}/>
             <h1> Phone </h1>
             <input {...register("phone", { required: true })}/>
-            {switcher?
-            <input type="submit"/>
-            :
-            <>
-                <h4>Thanks for buying!</h4>
-                <h6>Your purchase id is {orderId} </h6>
-            </>}
+            <input type="submit"/>     
         </form>
+    //     <form onSubmit= {handleSubmit(addOrderUpdateItems)} >
+    //         <div class="mb-3">
+    //             <label for="exampleInputEmail1" class="form-label">Email address</label>
+    //             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    //             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    //         </div>
+    //         <div class="mb-3">
+    //             <label for="exampleInputPassword1" class="form-label">Password</label>
+    //             <input type="password" class="form-control" id="exampleInputPassword1"/>
+    //         </div>
+    //     </form>
     )
 }
 

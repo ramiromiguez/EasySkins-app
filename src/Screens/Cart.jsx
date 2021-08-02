@@ -3,7 +3,11 @@ import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Context/CartContext'
 import { ConfirmBuy } from '../Screens/ConfirmBuy'
+import { EmptyCart } from '../Components/Cart/EmptyCart'
+import { OutOfStock } from '../Components/Cart/OutOfStock'
+import { FinishedBuy } from '../Components/Cart/FinishedBuy'
 import CartItems from '../Components/Cart/CartItems'
+
 import './cart.scss'
 
 
@@ -11,69 +15,67 @@ export const Cart = () => {
 
     const { addItems, CartTotalPrice } = useContext(CartContext)
     const [total, setTotal] = useState(0)
+    const [switcher, setSwitcher] = useState(0)
+    const [cartSwitcher, setCartSwitcher] = useState(false)
+    const [outOfStockArr, setOutOfStockArr] = useState();
 
+    console.log(outOfStockArr)
     useEffect(() => {
         setTotal(CartTotalPrice())
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [CartTotalPrice])
 
+    useEffect(() => {
+        setSwitcher(0);
+    }, [])
 
-    return addItems.length > 0 ? (
+    const checkSwitcher = () => {
+        switch (switcher) {
+            case 0: return <ConfirmBuy setSwitcher={setSwitcher} total={total} setOutOfStockArr={setOutOfStockArr} outOfStockArr={outOfStockArr}/>; // Caso 0 : Caso pre confirmar compra
+            case 1: return <OutOfStock setSwitcher={setSwitcher} />
+            case 2: return <FinishedBuy setCartSwitcher={setCartSwitcher} />
+            default: return null
+
+        }
+    }
+
+
+
+    return addItems.length > 0 && cartSwitcher === false ? (
         <div className="container">
-            <div className="row">
-                <div className="col-2">
-                    <h4>Name</h4>
-                </div>
-                <div className="col-2">
-                    <h4>Quantity</h4>
-                </div>
-                <div className="col-2">
-                    <h4> Price </h4>
-                </div>
-                <div className="col-2">
-                    <h4> Sum </h4>
-                </div>
-                <div className="col-2">
-                </div>
-                <div className="col-2">
-                    <h4> Total </h4>
-                </div>
-            </div>
-            <div>
-                {addItems.map((element, id) =>
-                    <CartItems key={id}{...element}></CartItems>
-                )}
-            </div>
-            <div className="row">
-                <div className="col-2">
-                </div>
-                <div className="col-2">
-                </div>
-                <div className="col-2">
-                </div>
-                <div className="col-2">
-                </div>
-                <div className="col-2">
-                </div>
-                <div className="col-2">
-                    <h4> {total} </h4>
-                </div>
-            </div>
-            <ConfirmBuy/>
+            <table className="table text-light mt-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Sum</th>
+                        <th scope="col">Remove Item</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {addItems.map((element, id) =>
+                        <CartItems key={id}{...element}></CartItems>
+                    )}
+                    <tr>
+                        <th></th>
+                        <td></td>
+                        <td></td>
+                        <th></th>
+                        <td></td>
+                        <td><h4>{total}</h4></td>
+                    </tr>
+                </tbody>
+            </table>
+            {checkSwitcher()}
+
         </div>
+    ) : cartSwitcher === true ? (
+        <FinishedBuy setCartSwitcher={setCartSwitcher}/>
     ) : (
-        <div className="container">
-            <div className="row justify-content-center mt-5">
-                <div className="col-10 text-center">
-                    <h1 className="text-light">There are no skins in the cart :(</h1>
-                    <h1 className="text-light">Go home and add some skins!</h1>
-                    <Link to={`/`}>
-                        <button className="btn btn-outline-light btn-lg mt-4">home</button>
-                    </Link>
-                </div>
-            </div>
-        </div>
+        <EmptyCart />
     )
-} 
+}
 
-export default Cart
+export default Cart;
