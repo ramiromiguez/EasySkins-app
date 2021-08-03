@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/EasySkins-app/static/css/main.ffc536fb.chunk.css",
-    "main.js": "/EasySkins-app/static/js/main.15ba7195.chunk.js",
-    "main.js.map": "/EasySkins-app/static/js/main.15ba7195.chunk.js.map",
+    "main.js": "/EasySkins-app/static/js/main.c5fda847.chunk.js",
+    "main.js.map": "/EasySkins-app/static/js/main.c5fda847.chunk.js.map",
     "runtime-main.js": "/EasySkins-app/static/js/runtime-main.ef770f7b.js",
     "runtime-main.js.map": "/EasySkins-app/static/js/runtime-main.ef770f7b.js.map",
     "static/js/2.36297749.chunk.js": "/EasySkins-app/static/js/2.36297749.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ef770f7b.js",
     "static/js/2.36297749.chunk.js",
     "static/css/main.ffc536fb.chunk.css",
-    "static/js/main.15ba7195.chunk.js"
+    "static/js/main.c5fda847.chunk.js"
   ]
 }
