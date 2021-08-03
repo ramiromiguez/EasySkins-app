@@ -11,7 +11,7 @@ const CartWidget = () => {
 
     return addItems.length > 0 ? (
         <div className="row">
-            <Link to={'/Cart'}>
+            <Link to={'/EasySkins-app/Cart'}>
                 <RiShoppingCart2Fill className='cart' />
             </Link>
             <h5 className="text-light">{addItems.length}</h5>

@@ -69,7 +69,7 @@ export const Cart = () => {
                     />)}
             <h3 className="text-white">We removed the items that werent available</h3>
             <h3 className="text-white">Go back to the cart to see your buy resume updated</h3>
-            <Link to={'/Cart'}>
+            <Link to={'/EasySkins-app/Cart'}>
                 <button className="btn btn-outline-light mb-2 mx-auto" onClick={() => setCartSwitcher(0)}>Cart</button>
             </Link>
         </div>

@@ -18,7 +18,7 @@ export const FinishedBuy = ({ orderId }) => {
             <h2> Your buy ticket id:</h2>
             <h2> {orderId} </h2>
             <h3> thanks for buying!</h3>
-            <Link to={`/`}>
+            <Link to={`/EasySkins-app/`}>
                 <button className="btn btn-outline-light btn-lg mt-4">home</button>
             </Link>
         </div>

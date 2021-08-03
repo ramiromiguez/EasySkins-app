@@ -32,7 +32,7 @@ export const NavbarItemsCategory = () => {
         <>
             {
                 category.map((element, key) =>
-                <Link className="nav-link active navlinks" aria-current="page" to={`/category/${element.category}`} key={key}> {`${element.category}`} </Link>)
+                <Link className="nav-link active navlinks" aria-current="page" to={`/EasySkins-app/category/${element.category}`} key={key}> {`${element.category}`} </Link>)
             }
         </>
     )

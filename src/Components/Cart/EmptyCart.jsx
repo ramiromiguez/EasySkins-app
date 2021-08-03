@@ -8,7 +8,7 @@ export const EmptyCart = () => {
                 <div className="col-10 text-center">
                     <h1 className="text-light">There are no skins in the cart :(</h1>
                     <h1 className="text-light">Go home and add some skins!</h1>
-                    <Link to={`/`}>
+                    <Link to={`/EasySkins-app/`}>
                         <button className="btn btn-outline-light btn-lg mt-4">home</button>
                     </Link>
                 </div>

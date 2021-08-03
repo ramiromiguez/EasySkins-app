@@ -11,7 +11,7 @@ export const Navbar = () => {
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark border-bottom border-top border-white animate__animated animate__fadeInDown animate__faster">
       <div className="container-fluid">
           <div>
-              <Link className="navbar-brand" to={`/`}>EasySkins</Link>
+              <Link className="navbar-brand" to={`/EasySkins-app/`}>EasySkins</Link>
           </div>
           <div className="cartWidget">
               <CartWidget/>

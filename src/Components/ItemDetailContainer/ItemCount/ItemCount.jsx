@@ -46,7 +46,7 @@ export const ItemCount = props => {
         </div>
         :
         <div className="butonContainer text-center mt-5 mb-2">
-            <Link className="btn btn-outline-light m-1" to={`/Cart`} onClick={() => AddNewItem(stockId, stock, stockMaxQuantity, itemName, itemPrice)}>Confirm Buy</Link>
+            <Link className="btn btn-outline-light m-1" to={`/EasySkins-app/Cart`} onClick={() => AddNewItem(stockId, stock, stockMaxQuantity, itemName, itemPrice)}>Confirm Buy</Link>
             <button className="btn btn-outline-light m-1" onClick={() => handlePress(false)}> Undo Buy</button>
         </div>
 }
