@@ -10,7 +10,10 @@ del producto/s que seleccionaste se te va a avisar cual es el producto que esta 
 https://ramiromiguez.github.io/EasySkins-app/
 
 **Funcionamiento:**
+![image](https://github.com/ramiromiguez/EasySkins-app/blob/main/imagenes/final-610b002f9d9fd200685cf050-3.gif?raw=true)
 
 **Firebase:**
 ![image](https://raw.githubusercontent.com/ramiromiguez/EasySkins-app/main/imagenes/Screenshot_2021-08-04_17-39-35.png?raw=true)
+![image](https://raw.githubusercontent.com/ramiromiguez/EasySkins-app/main/imagenes/Screenshot_2021-08-04_17-38-40.png?raw=true)
+
 
