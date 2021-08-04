@@ -1,4 +1,4 @@
-**EasySkins-app**
+**EasySkins-app:**
 Pagina dedicada a la compra y venta de skins de cs-go
 
 **Funcionalidades:**
@@ -12,4 +12,5 @@ https://ramiromiguez.github.io/EasySkins-app/
 **Funcionamiento:**
 
 **Firebase:**
+![image](https://raw.githubusercontent.com/ramiromiguez/EasySkins-app/main/imagenes/Screenshot_2021-08-04_17-39-35.png?raw=true)
 
